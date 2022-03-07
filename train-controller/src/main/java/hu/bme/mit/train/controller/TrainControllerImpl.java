@@ -54,7 +54,6 @@ public class TrainControllerImpl implements TrainController {
 
 	public void setIsActive(boolean isActive){
 		this.isActive = isActive;
-		-Hiba
 	}
 
 }
