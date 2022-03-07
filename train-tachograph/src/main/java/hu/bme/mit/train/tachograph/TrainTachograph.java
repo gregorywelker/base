@@ -5,7 +5,7 @@ import com.google.common.collect.HashBasedTable;
 
 public class TrainTachograph {
 
-	private Table<long, double, double> tachograph = HashBasedTable.create();
+	private Table<Long, Double, Double> tachograph = HashBasedTable.create();
 
 	public void addElement(long timestamp,double joystick, double speed){
 		tachograph.put(timestamp, joystick, speed); 
