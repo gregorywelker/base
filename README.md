@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Conflict from branch-a
+=======
+# Conflict from branch-b
+>>>>>>> branch-b
 
 # Retelab
 
