@@ -1,4 +1,3 @@
-# Conflict from branch-b
 # Retelab
 
 ## Gergo Welker | Weiss Apollo
