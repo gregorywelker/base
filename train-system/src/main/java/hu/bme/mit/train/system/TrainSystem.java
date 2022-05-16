@@ -13,6 +13,23 @@ public class TrainSystem {
 	private TrainUser user = new TrainUserImpl(controller);
 	private TrainSensor sensor = new TrainSensorImpl(controller, user);
 
+	private Timer myTimer = new Timer();
+
+	public TrainSystem()
+	{
+		controller.setSpeedLimit(10);
+
+		myTimer.Tick += new EventHandler(TimerEventProcessor);
+		myTimer.Interval = 5000;
+      	myTimer.Start();
+	}	
+
+	private void TimerEventProcessor(){
+
+		controller.setJoystickPosition(user.getJoystickPosition);
+		
+	}	
+	
 	public TrainController getController() {
 		return controller;
 	}
