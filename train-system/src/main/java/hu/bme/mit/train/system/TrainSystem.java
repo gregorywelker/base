@@ -9,6 +9,7 @@ import hu.bme.mit.train.interfaces.TrainSensor;
 import hu.bme.mit.train.interfaces.TrainUser;
 import hu.bme.mit.train.sensor.TrainSensorImpl;
 import hu.bme.mit.train.user.TrainUserImpl;
+import java.util.Timer;
 
 public class TrainSystem {
 
@@ -31,6 +32,23 @@ public class TrainSystem {
 
 	} 
 
+	private Timer myTimer = new Timer();
+
+	public TrainSystem()
+	{
+		controller.setSpeedLimit(10);
+
+		myTimer.Tick += new EventHandler(TimerEventProcessor);
+		myTimer.Interval = 5000;
+      	myTimer.Start();
+	}	
+
+	private void TimerEventProcessor(){
+
+		controller.setJoystickPosition(user.getJoystickPosition);
+
+	}	
+	
 	public TrainController getController() {
 		return controller;
 	}
